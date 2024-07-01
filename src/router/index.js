@@ -1,10 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import TodoList from "../components/todo/Todo-list";
-import First from "../components/first/First";
-import MagicBall from "../components/MagicBall/MagicBall";
-import Home from "../components/HomePage/home";
+
 import Game from "../components/puzzle/Game";
+import Game9 from "../components/puzzle/Game9";
 
 export const router = createBrowserRouter([
     {
@@ -14,23 +12,17 @@ export const router = createBrowserRouter([
       children: [
         {
             index: true,
-            element: <Home/>
+            element: <Game size={16}/>
+        },
+        
+      
+        {
+          path: "puzlle16",
+          element: <Game size={16}/>
         },
         {
-          path: "todo",
-          element: <TodoList />
-        },
-        {
-          path: "first",
-          element: <First />
-        },
-        {
-          path: "ball",
-          element: <MagicBall />
-        },
-        {
-          path: "puzlle",
-          element: <Game />
+          path: "puzlle9",
+          element: <Game9 size={9}/>
         },
 
       ]
